@@ -1,5 +1,5 @@
 window.onload = function() {
-    const defaultLiffId = "1653382491-Bzkn9OXd";
+    const defaultLiffId = "1653382491-GbEBlw6O";
     initializeLiff(defaultLiffId);
 };
 
