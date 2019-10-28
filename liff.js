@@ -14,9 +14,9 @@ function initializeLiff(myLiffId) {
             liff.sendMessages([{
                 'type': 'text',
                 'text': stringifiedResult
-            }]).then(function() {
+            }]).then(() => {
                 liff.closeWindow();
-            }).catch(function(error) {
+            }).catch((error) => {
                 window.alert('Error sending message: ' + error);
             });
         }).catch(err => {
