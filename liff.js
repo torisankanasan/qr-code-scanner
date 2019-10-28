@@ -1,28 +1,6 @@
 window.onload = function() {
-    const useNodeJS = true;   // if you are not using a node server, set this value to false
     const defaultLiffId = "1653382491-Bzkn9OXd";   // change the default LIFF value if you are not using a node server
-
-    // DO NOT CHANGE THIS
-    let myLiffId = "";
-
-    // if node is used, fetch the environment variable and pass it to the LIFF method
-    // otherwise, pass defaultLiffId
-    if (useNodeJS) {
-        fetch('/send-id')
-            .then(function(reqResponse) {
-                return reqResponse.json();
-            })
-            .then(function(jsonResponse) {
-                myLiffId = jsonResponse.id;
-                initializeLiffOrDie(myLiffId);
-            })
-            .catch(function(error) {
-                window.alert('Unable to receive the LIFF ID as an environment variable.');
-            });
-    } else {
-        myLiffId = defaultLiffId;
-        initializeLiffOrDie(myLiffId);
-    }
+    initializeLiffOrDie(defaultLiffId);
 };
 
 /**
@@ -30,10 +8,7 @@ window.onload = function() {
 * @param {string} myLiffId The LIFF ID of the selected element
 */
 function initializeLiffOrDie(myLiffId) {
-    if (!myLiffId) {
-    } else {
-        initializeLiff(myLiffId);
-    }
+    initializeLiff(myLiffId);
 }
 
 /**
